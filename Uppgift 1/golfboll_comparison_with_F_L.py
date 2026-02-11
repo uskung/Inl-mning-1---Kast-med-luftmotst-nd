@@ -1,10 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rc('font', size = 11, family='serif')
-#plt.rc('text', usetex=True)
-plt.rc('font', serif='Computer Modern')
-
 #################
 # Define data for ball
 m = 45.7*10**(-3) # mass [kg]
@@ -111,14 +107,18 @@ while y >= 0: ## i.e. while ball is in the air
     vx = vx + ax*dt
     vy = vy + ay*dt
 
+plt.rc('font', size = 11, family='serif')
+plt.rc('text', usetex=True)
+plt.rc('font', serif='Computer Modern')
+
 axis = plt.gca() # plots current axes
 axis.set_aspect('equal', adjustable='box')
 plt.grid()
-plt.plot(xlist,ylist,'.', color='blue', label='F_L = -kL*v^2')
-plt.plot(xlist2,ylist2,'.', color='red', label='F_L = -kL*v')
+plt.plot(xlist,ylist,'.', color='blue', label='$F_L = -k_L \\cdot v^2$')
+plt.plot(xlist2,ylist2,'.', color='red', label='$F_L = -k_L \\cdot v$')
 plt.legend()
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
+plt.xlabel('$x$ [m]')
+plt.ylabel('$y$ [m]')
 plt.show()
 
 
