@@ -28,7 +28,7 @@ h = 0 # height at t=0 [m]
 
 ###############
 # Defines variables that are used in calculations
-dt = 0.001 # step size for Euler's method [s]
+dt = 0.0001 # step size for Euler's method [s]
 vx = v0 * np.cos(alfa0)
 vy = v0 * np.sin(alfa0)
 alfa = alfa0 
@@ -114,11 +114,9 @@ plt.rc('font', serif='Computer Modern')
 axis = plt.gca() # plots current axes
 axis.set_aspect('equal', adjustable='box')
 plt.grid()
-plt.plot(xlist,ylist,'.', color='blue', label='$F_L = -k_L \\cdot v^2$')
-plt.plot(xlist2,ylist2,'.', color='red', label='$F_L = -k_L \\cdot v$')
+plt.plot(xlist,ylist,'.', color='blue', label='$F_L \\propto v^2$')
+plt.plot(xlist2,ylist2,'.', color='red', label='$F_L \\propto v$')
 plt.legend()
 plt.xlabel('$x$ [m]')
 plt.ylabel('$y$ [m]')
 plt.show()
-
-
